@@ -1,9 +1,9 @@
-# depreciated
-'''
-from connect import DbConnect
+from models.connection_options.connect import DbConnectHandler
 
-connection = DbConnect().mongo_connection()
-print(connection)
+db_handle = DbConnectHandler()
+db_handle.connect_to_db()
+connection = db_handle.get_db_connection()
+
 def find(collection: str, key: str, value: str):
 
     collection_obj = connection.get_collection(collection)
@@ -20,5 +20,4 @@ def insert(collection: str, values: dict):
     collection_obj.insert_one(values)
 
 find("user","name","Dellaoc")
-insert("user",{"name":"Ryzen","size":[5,7,9]})
-'''
+insert("user",{"name":"Ryzen 2","size":[55,27,9]})
