@@ -1,8 +1,16 @@
 from models.connection_options.connect import DbConnectHandler
+from models.repository.user_repository import UserRepository
 
 db_handle = DbConnectHandler()
 db_handle.connect_to_db()
 connection = db_handle.get_db_connection()
+
+user_repository = UserRepository(connection)
+user_repository.insert_document({"name":"AOC","val":[5,9,6]})
+
+
+
+
 
 def find(collection: str, key: str, value: str):
 
@@ -18,6 +26,7 @@ def insert(collection: str, values: dict):
     collection_obj = connection.get_collection(collection)
 
     collection_obj.insert_one(values)
-
+'''
 find("user","name","Dellaoc")
 insert("user",{"name":"Ryzen 2","size":[55,27,9]})
+'''
