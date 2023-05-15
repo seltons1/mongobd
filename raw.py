@@ -1,3 +1,5 @@
+# depreciated
+'''
 from connect import DbConnect
 
 connection = DbConnect().mongo_connection()
@@ -19,3 +21,4 @@ def insert(collection: str, values: dict):
 
 find("user","name","Dellaoc")
 insert("user",{"name":"Ryzen","size":[5,7,9]})
+'''
