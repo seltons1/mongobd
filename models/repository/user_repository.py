@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, List
 
 class UserRepository():
 
@@ -11,4 +11,10 @@ class UserRepository():
         collection = self.__db_connection.get_collection(self.__collection_name)
         collection.insert_one(document)
         return document
+
+    def insert_list_of_documents(self, list_of_documents: List[Dict]) -> List[Dict]:
+
+        collection = self.__db_connection.get_collection(self.__collection_name)
+        collection.insert_many(list_of_documents)
+        return list_of_documents
 

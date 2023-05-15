@@ -8,6 +8,12 @@ connection = db_handle.get_db_connection()
 user_repository = UserRepository(connection)
 user_repository.insert_document({"name":"AOC","val":[5,9,6]})
 
+list_of_documents= [
+    {"teste":"1"},
+    {"teste 2":"2"},
+    {"teste 3":"3"},
+]
+user_repository.insert_list_of_documents(list_of_documents)
 
 
 
